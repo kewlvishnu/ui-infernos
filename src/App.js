@@ -12,26 +12,26 @@ function App() {
               <nav>
                   <ul>
                       <li>
-                          <Link to="/get">Get</Link>
+                          <Link to={`${process.env.PUBLIC_URL}/get`}>Get</Link>
                       </li>
                       <li>
-                          <Link to="/post">Post</Link>
+                          <Link to={`${process.env.PUBLIC_URL}/post`}>Post</Link>
                       </li>
                       <li>
-                          <Link to="/delete">Delete</Link>
+                          <Link to={`${process.env.PUBLIC_URL}/delete`}>Delete</Link>
                       </li>
                   </ul>
               </nav>
               {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
               <Switch>
-                  <Route path="/get">
+                  <Route path={`${process.env.PUBLIC_URL}/get`}>
                       <Get />
                   </Route>
-                  <Route path="/post">
+                  <Route path={`${process.env.PUBLIC_URL}/post`}>
                       <Post />
                   </Route>
-                  <Route path="/delete">
+                  <Route path={`${process.env.PUBLIC_URL}/delete`}>
                       <Delete />
                   </Route>
               </Switch>
