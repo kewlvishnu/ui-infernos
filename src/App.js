@@ -7,7 +7,7 @@ import Post from "./components/Post";
 
 function App() {
   return (
-      <Router>
+      <Router basename={"/ui"}>
           <div>
               <nav>
                   <ul>
