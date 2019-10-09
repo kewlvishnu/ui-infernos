@@ -1,37 +1,38 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import './App.css';
-import Get from "./components/Get"
+import Get from "./components/Get";
 import Delete from "./components/Delete";
 import Post from "./components/Post";
+import { createBrowserHistory } from 'history';
 
 function App() {
   return (
-      <Router basename={"/ui"}>
+      <Router basename="/ui">
           <div>
               <nav>
                   <ul>
                       <li>
-                          <Link to={`${process.env.PUBLIC_URL}/get`}>Get</Link>
+                          <Link to="/get">Get</Link>
                       </li>
                       <li>
-                          <Link to={`${process.env.PUBLIC_URL}/post`}>Post</Link>
+                          <Link to="/post">Post</Link>
                       </li>
                       <li>
-                          <Link to={`${process.env.PUBLIC_URL}/delete`}>Delete</Link>
+                          <Link to="/delete">Delete</Link>
                       </li>
                   </ul>
               </nav>
               {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
               <Switch>
-                  <Route path={`${process.env.PUBLIC_URL}/get`}>
+                  <Route path="/get">
                       <Get />
                   </Route>
-                  <Route path={`${process.env.PUBLIC_URL}/post`}>
+                  <Route path="/post">
                       <Post />
                   </Route>
-                  <Route path={`${process.env.PUBLIC_URL}/delete`}>
+                  <Route path="/delete">
                       <Delete />
                   </Route>
               </Switch>
@@ -39,5 +40,9 @@ function App() {
       </Router>
   );
 }
+
+export const history = createBrowserHistory({
+    basename: process.env.PUBLIC_URL
+});
 
 export default App;

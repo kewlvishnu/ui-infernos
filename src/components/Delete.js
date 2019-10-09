@@ -14,7 +14,7 @@ export default class Delete extends React.Component {
         event.preventDefault();
 
 
-        axios.delete(`https://app.infernos.io/tiller/v2/releases/${this.state.id}/json?purge=true`, {
+        axios.delete(`https://cors-anywhere.herokuapp.com/https://app.infernos.io/tiller/v2/releases/${this.state.id}/json?purge=true`, {
             headers: {
                 'Access-Control-Allow-Origin': '*',
                 'Content-Type': 'application/json',

@@ -29,7 +29,7 @@ export default class Post extends React.Component {
     handleSubmit = event => {
         event.preventDefault();
 
-        axios.post(`https://app.infernos.io/tiller/v2/releases/${this.state.id}/json?purge=true`, {})
+        axios.post(`https://cors-anywhere.herokuapp.com/https://app.infernos.io/tiller/v2/releases/${this.state.id}/json?purge=true`, {})
             .then(res => {
                 console.log(res);
                 console.log(res.data);
